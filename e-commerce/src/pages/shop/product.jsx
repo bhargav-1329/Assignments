@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 
-export const Product = ({data, onClick}) => {
+export const Product = ({ data, onClick }) => {
   // const { id, productName, price, productImage } = props.data;
   const { addToCart } = useContext(ShopContext);
   function handleCart() {
-    addToCart(data.id)
-    onClick()
+    addToCart(data.id);
+    onClick();
   }
 
   return (
-    <div className="product">
-      <img src={data.productImage} alt={data.productName}/>
+    <div className="product" data-test="product">
+      <img src={data.productImage} alt={data.productName} />
       <div className="description">
         <p>
           <b>{data.productName}</b>
